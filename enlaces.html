@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Amenaza por tsunami -INSIVUMEH-</title>
+    <meta name="description" content="" />
+    <meta name="author" content="Tooplate" />
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Additional CSS Files -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="assets/css/tooplate-style.css" />
+    <link rel="stylesheet" href="assets/css/owl.css" />
+    <link rel="stylesheet" href="assets/css/lightbox.css" />
+  </head>
+<!--
+Tooplate 2116 Blugoon
+https://www.tooplate.com/view/2116-blugoon
+-->
+  <body>
+    <div id="page-wraper">
+      <!-- Sidebar Menu -->
+
+      <section class="section about-me" data-section="section1">
+        <div class="container">
+        <div class="top-header">
+        	<img src="assets/images/coast-main2.jpg" alt="coast main2" />
+        </div>
+          <div class="section-heading">
+            <h2>Glosario</h2>
+            <div class="line-dec"></div>
+            <span>Un tsunami es una serie de olas peligrosas generadas por un terremoto muy fuerte.</span>
+          </div>
+          <div class="right-image-post">
+            <div class="row">
+ 
+              <div class="col-md-8">
+                <div class="left-text">
+                  <p>Base de datos precalculada donde se puede consultar sismos y tsunamis históricos, así como los detalles de las fuentes sísmicas hipotéticas que pueden generar tsunamis (en ingles). Link: <a rel="nofollow" href="https://www.ncei.noaa.gov/maps/CATSAM/">Caribbean and Adjacent Regions Tsunami Sources and Models</a>.</p>
+                  <p>Emisiones de alerta de tsunamis generados por sismos o algún evento tsunamigenico (en ingles). En linea: <a rel="nofollow" href="https://www.tsunami.gov/">U.S Tsunami Warning System</a>.</p>
+                  <p>Centro de Asesoramiento de Tsunami para América Central (CATAC), donde se pueden visualizar sismos, sismogramas, shakemaps, mapas, ..., e incluso experimentar el software que usan la mayoria de instituciones de monitoreo sísmico. Link: <a rel="nofollow" href="http://catac.ineter.gob.ni/">CATAC</a>.</p>
+                  <p>TSUNAMIS LAS GRANDES OLAS. Texto pequenio donde se detallan la geologia y la generacion de tsunamis por terremotos, las caracteristicas de las olas de tsunamis según si son locales o distantes y algunos efectos posteriores a un tsunami. Link: <a rel="nofollow" href="https://unesdoc.unesco.org/ark:/48223/pf0000148609_spa">LAS GRANDES OLAS</a>.</p>
+                  <p>Tsunamis históricos, posters con eventos importantes históricos mundiales, animaciones de tsunami y posters sobre lugares donde ocurren sismos grandes (inglés y algunos en español). Link: <a rel="nofollow" href="https://www.ngdc.noaa.gov/hazard/tsu.shtml">Tsunami Data and Information</a>.</p>
+                  <div class="white-button">
+                    <a rel="nofollow" href="https://www.pexels.com">Read More</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="right-image">
+                  <img src="assets/images/afiche_tsunami.png" alt="Afiche Tsunami" />
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+      //according to loftblog tut
+      $(".main-menu li:first").addClass("active");
+
+      var showSection = function showSection(section, isAnimate) {
+        var direction = section.replace(/#/, ""),
+          reqSection = $(".section").filter(
+            '[data-section="' + direction + '"]'
+          ),
+          reqSectionPos = reqSection.offset().top - 0;
+
+        if (isAnimate) {
+          $("body, html").animate(
+            {
+              scrollTop: reqSectionPos
+            },
+            800
+          );
+        } else {
+          $("body, html").scrollTop(reqSectionPos);
+        }
+      };
+
+      var checkSection = function checkSection() {
+        $(".section").each(function() {
+          var $this = $(this),
+            topEdge = $this.offset().top - 80,
+            bottomEdge = topEdge + $this.height(),
+            wScroll = $(window).scrollTop();
+          if (topEdge < wScroll && bottomEdge > wScroll) {
+            var currentId = $this.data("section"),
+              reqLink = $("a").filter("[href*=\\#" + currentId + "]");
+            reqLink
+              .closest("li")
+              .addClass("active")
+              .siblings()
+              .removeClass("active");
+          }
+        });
+      };
+
+      $(".main-menu").on("click", "a", function(e) {
+        e.preventDefault();
+        showSection($(this).attr("href"), true);
+      });
+
+      $(window).scroll(function() {
+        checkSection();
+      });
+    </script>
+  </body>
+</html>

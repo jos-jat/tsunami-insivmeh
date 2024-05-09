@@ -1,2 +1,0 @@
-Convertir varios archivos pngs a gif
-convert -delay 100 -loop 1 -dispose previous guatecar.2D.*png a.gif

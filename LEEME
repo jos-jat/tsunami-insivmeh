@@ -1,0 +1,5 @@
+Convertir varios archivos pngs a gif
+convert -delay 100 -loop 1 -dispose previous guatecar.2D.*png a.gif
+
+Convertir gif a video
+ffmpeg -i tsunami_simulation.gif tsunami_simulation.mp4
